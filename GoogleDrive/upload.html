@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="google-signin-client_id" content="515079049164-5tvhqducbao96ktck7qsoouv1ic95jg7.apps.googleusercontent.com">
+    <title>Upload Files to Gdrive</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script src="upload.js"></script>
+    <link rel="stylesheet" href="upload.css">
+  </head>
+  <body>
+    <a href="#" onclick="logout();">Sign out</a>
+    <script type="text/javascript">
+    var logout = function(){
+    document.location.href = "https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=https://localhost/GoogleDrive/index.html";
+    }
+    </script>
+
+    <div class="upload-file">
+
+        <div class="upload-snippet">
+            <h3>Google Drive File Uploader Page</h3>
+
+            <div class="row">
+                    <div class="column">
+                      <img src="images/drive.png" class="center" >
+                    </div>
+                    <div>
+                        <button class="btn btn-primary" align="right" onclick="logout();">Sign out</button>
+                    </div>
+
+                  </div>
+
+            <input id="files" type="file" name="files[]" multiple/>
+            <hr>
+
+            <button id="uploadFile" class="btn btn-primary">Upload</button>
+            <div id="progress-wrp">
+                <div class="progress-bar"></div>
+                <div class="status">0%</div>
+            </div>
+        </div>
+
+        <div id="result">
+        </div>
+
+    </div>
+
+
+
+  </body>
+</html>
